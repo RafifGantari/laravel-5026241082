@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\DosenController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,3 +40,10 @@ Route::get('/tugaslinktree', function () {
 Route::get('/tugaspertemuan3', function () {
     return view('tugasPertemuan3');
 });
+
+Route::get('/pegawailama/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::get('/formulir/proses', [PegawaiDBController::class, 'proses']);
+
+//route CRUD
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
