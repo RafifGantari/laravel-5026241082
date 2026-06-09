@@ -11,39 +11,40 @@
 
 <body>
 
-    <div class="mt-4 p-5 bg-primary text-white">
-        <h1>5026241082 Rafif Taqiy Gantari</h1>
-        <p>@yield('judul_halaman')</p>
-    </div>
-    <!-- Grey with black text -->
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/pegawai">Pegawai</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Nama tabel PR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Siswa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">EAS</a>
-                </li>
-            </ul>
+    <div class="container ">
+        <div class="mt-4 p-5 bg-primary text-white rounded">
+            <h1>5026241082 Rafif Taqiy Gantari</h1>
+            <p>@yield('judul_halaman')</p>
         </div>
-    </nav>
-    <div class="container">
-        @yield('konten')
+        <!-- Grey with black text -->
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/pegawai">Pegawai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kertashvs">Kertas HVS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Siswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Latihan 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Latihan 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">EAS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            @yield('konten')
+        </div>
     </div>
-
 </body>
 
 </html>

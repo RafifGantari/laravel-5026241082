@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\KertashvsDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -54,3 +55,12 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//tugas pra EAS
+Route::get('/kertashvs', [KertashvsDBController::class, 'indexhvs']);
+Route::get('/kertashvs/tambah', [KertashvsDBController::class, 'tambahhvs']);
+Route::post('/kertashvs/store', [KertashvsDBController::class, 'storehvs']);
+Route::get('/kertashvs/edit/{kodekertashvs}', [KertashvsDBController::class, 'edithvs']);
+Route::post('/kertashvs/update', [KertashvsDBController::class, 'updatehvs']);
+Route::get('/kertashvs/hapus/{kodekertashvs}', [KertashvsDBController::class, 'hapushvs']);
+Route::get('/kertashvs/cari', [KertashvsDBController::class, 'carihvs']);
