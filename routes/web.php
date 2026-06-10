@@ -7,6 +7,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KertashvsDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
+use App\Http\Controllers\NilaiKuliahDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -80,3 +81,9 @@ Route::get('/keranjangbelanja', [KeranjangBelanjaDBController::class, 'index'])-
 Route::get('/keranjangbelanja/create', [KeranjangBelanjaDBController::class, 'create'])->name('keranjangbelanja.create');
 Route::post('/keranjangbelanja', [KeranjangBelanjaDBController::class, 'store'])->name('keranjangbelanja.store');
 Route::delete('/keranjangbelanja/{ID}', [KeranjangBelanjaDBController::class, 'destroy'])->name('keranjangbelanja.destroy');
+
+//route CRUD nilaikuliah
+Route::get('/nilaikuliah', [NilaiKuliahDBController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/create', [NilaiKuliahDBController::class, 'create'])->name('nilaikuliah.create');
+Route::post('/nilaikuliah', [NilaiKuliahDBController::class, 'store'])->name('nilaikuliah.store');
+Route::delete('/nilaikuliah/{ID}', [NilaiKuliahDBController::class, 'destroy'])->name('nilaikuliah.destroy');
