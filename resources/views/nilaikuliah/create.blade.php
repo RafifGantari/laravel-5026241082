@@ -12,26 +12,36 @@
         </ul>
     @endif
 
-    <form action="{{ route('nilaikuliah.store') }}" method="POST" onsubmit="return validasiForm()">
-        @csrf
+    <form action="{{ route('nilaikuliah.store') }}" method="post">
+        {{ csrf_field() }}
 
-        <p>
-            <label>NRP</label><br>
-            <input type="text" name="NRP" id="NRP" maxlength="10" value="{{ old('NRP') }}">
-        </p>
+        <div class="row mb-3">
+            <label for="NRP" class="col-sm-2 col-form-label">NRP</label>
+            <div class="col-sm-10">
+                <input type="text" name="NRP" id="NRP" class="form-control" maxlength="6" required>
+            </div>
+        </div>
 
-        <p>
-            <label>Nilai Angka</label><br>
-            <input type="text" name="NilaiAngka" id="NilaiAngka" value="{{ old('NilaiAngka') }}">
-        </p>
+        <div class="row mb-3">
+            <label for="NilaiAngka" class="col-sm-2 col-form-label">Nilai Angka</label>
+            <div class="col-sm-10">
+                <input type="text" name="NilaiAngka" id="NilaiAngka" class="form-control" required>
+            </div>
+        </div>
 
-        <p>
-            <label>SKS</label><br>
-            <input type="text" name="SKS" id="SKS" value="{{ old('SKS') }}">
-        </p>
+        <div class="row mb-3">
+            <label for="SKS" class="col-sm-2 col-form-label">SKS</label>
+            <div class="col-sm-10">
+                <input type="number" name="SKS" id="SKS" class="form-control" required>
+            </div>
+        </div>
 
-        <button type="submit">Simpan</button>
-        <a href="{{ route('nilaikuliah.index') }}">Kembali</a>
+        <div class="row">
+            <div class="offset-sm-2 col-sm-10">
+                <input type="submit" value="Simpan Data" class="btn btn-primary">
+            </div>
+        </div>
+
     </form>
 
     <script>
