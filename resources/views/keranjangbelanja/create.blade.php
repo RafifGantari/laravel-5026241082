@@ -11,27 +11,36 @@
             @endforeach
         </ul>
     @endif
+    <form action="{{ route('keranjangbelanja.store') }}" method="post">
+        {{ csrf_field() }}
 
-    <form action="{{ route('keranjangbelanja.store') }}" method="POST" onsubmit="return validasiForm()">
-        @csrf
+        <div class="row mb-3">
+            <label for="KodeBarang" class="col-sm-2 col-form-label">Kode Barang</label>
+            <div class="col-sm-10">
+                <input type="text" name="KodeBarang" id="KodeBarang" class="form-control" maxlength="6" required>
+            </div>
+        </div>
 
-        <p>
-            <label>Kode Barang</label><br>
-            <input type="text" name="KodeBarang" id="KodeBarang" maxlength="10" value="{{ old('KodeBarang') }}">
-        </p>
+        <div class="row mb-3">
+            <label for="Jumlah" class="col-sm-2 col-form-label">Jumlah</label>
+            <div class="col-sm-10">
+                <input type="text" name="Jumlah" id="Jumlah" class="form-control" required>
+            </div>
+        </div>
 
-        <p>
-            <label>Jumlah</label><br>
-            <input type="text" name="Jumlah" id="Jumlah" value="{{ old('Jumlah') }}">
-        </p>
+        <div class="row mb-3">
+            <label for="Harga" class="col-sm-2 col-form-label">Harga</label>
+            <div class="col-sm-10">
+                <input type="text" name="Harga" id="Harga" class="form-control" required>
+            </div>
+        </div>
 
-        <p>
-            <label>Harga</label><br>
-            <input type="text" name="Harga" id="Harga" value="{{ old('Harga') }}">
-        </p>
+        <div class="row">
+            <div class="offset-sm-2 col-sm-10">
+                <input type="submit" value="Simpan Data" class="btn btn-primary">
+            </div>
+        </div>
 
-        <button type="submit">Simpan</button>
-        <a href="{{ route('keranjangbelanja.index') }}">Kembali</a>
     </form>
 
     <script>
